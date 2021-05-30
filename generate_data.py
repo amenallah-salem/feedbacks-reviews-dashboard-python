@@ -25,7 +25,7 @@ def get_data(rowcount):
             #insure that the context we get is coherent with the amout spent with the user
             Envirement_Os=["Windows", "Mac OS", "Other"] if env =="web" else ["Android", "Other", "Ios"]
             yield f"({unix_current_time},{User_ID},{env},{random.choice(Envirement_Os)},{context},{Context_amount[context]})\n"
-    
+            #(time, user_id, env={wen/app}, os, context_click, amount_transaction )
     return Response(stream_with_context(generate_random_data()))
 
 
